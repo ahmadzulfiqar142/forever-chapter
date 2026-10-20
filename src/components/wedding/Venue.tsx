@@ -6,8 +6,8 @@ const venues = [
     date: "13 November",
     event: "Nikah",
     glyph: "۞",
-    place: "Venue name",
-    address: "Street address, City",
+    place: "Birki",
+    address: "142 10R",
     time: ["2:00 PM"],
   },
   {
@@ -15,8 +15,8 @@ const venues = [
     date: "13 November",
     event: "Mehndi",
     glyph: "✧",
-    place: "Venue name",
-    address: "Street address, City",
+    place: "Birki",
+    address: "142 10R",
     time: ["8:00 PM"],
   },
   {
@@ -24,9 +24,9 @@ const venues = [
     date: "14 November",
     event: "Baraat",
     glyph: "✦",
-    place: "Venue name",
-    address: "Street address, City",
-    time: ["7:00 PM onwards"],
+    place: "Qasr Ul Hamra",
+    address: "Jahanian, Pakistan",
+    time: ["Afternoon onwards"],
   },
 ];
 

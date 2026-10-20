@@ -41,7 +41,7 @@ const events: EventCard[] = [
     backLabel: "DAY TWO",
     backTitle: "Baraat",
     backDetail:
-      "The groom's procession arrives,\nfollowed by dinner and celebration\nlate into the evening.",
+      "The groom's procession arrives,\nfollowed by lunch and celebration\nin the afternoon.",
   },
 ];
 
