@@ -55,7 +55,7 @@ export default function Map() {
             href={MAP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#3E0F1F] px-6 text-sm font-medium tracking-wide text-[#F8F1E4] transition-colors hover:bg-[#5C1A2E] sm:w-auto"
+            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#3E0F1F] px-6 text-sm font-medium tracking-wide text-[#F8F1E4] transition-colors hover:bg-[#5C1A2E] sm:w-auto !px-3"
           >
             Get directions <span aria-hidden="true">↗</span>
           </a>
