@@ -133,22 +133,14 @@ function EventTiltCard({ event }: { event: EventCard }) {
 
 export default function Events() {
   return (
-    <section className="relative flex min-h-svh w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-[#5C1A2E] via-[#4A1526] to-[#3E0F1F] px-6 pt-16 pb-24 sm:py-20 md:py-24">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#3E0F1F]/40 via-transparent to-[#3E0F1F]/70" />
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 0%, rgba(201,162,39,0.22), transparent 60%)",
-        }}
-      />
+    <section className="relative flex min-h-svh w-full flex-col items-center justify-center overflow-hidden bg-[#F8F1E4] px-6 pt-16 pb-24 sm:py-20 md:py-24">
       <div className="relative z-10 w-full max-w-5xl !mt-4">
         <h2
-          className={`${fraunces.className} mb-2 text-center text-3xl font-medium text-[#F8F1E4] sm:text-4xl`}
+          className={`${fraunces.className} mb-2 text-center text-3xl font-medium text-[#3E0F1F] sm:text-4xl`}
         >
           Wedding Celebrations
         </h2>
-        <p className="mb-8 text-center text-base tracking-wide text-[#E4CD84]/80 sm:mb-10 sm:text-lg">
+        <p className="mb-8 text-center text-base tracking-wide text-[#4B6043] sm:mb-10 sm:text-lg">
           13–14 November · Nikah, Mehndi &amp; Baraat
         </p>
         <div className="grid grid-cols-1 gap-6 [perspective:1400px] md:grid-cols-3 md:gap-8 !p-4">
