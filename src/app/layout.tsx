@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         url: "/wedding-invitation-og.png",
         width: 1200,
         height: 630,
-        alt: "Wedding invitation — 13–14 November 2026 in Jahanian, Pakistan",
+        alt: "Mr. and Mrs. Tariq Mehmood invite guests to their daughter's wedding — 13–14 November 2026 in Jahanian, Pakistan",
       },
     ],
   },
