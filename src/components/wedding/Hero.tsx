@@ -1,9 +1,5 @@
 import { fraunces } from "@/lib/font";
-
-// Once you have a real photo, drop it in /public/images/hero-couple.jpg,
-// import Image from "next/image", and render it here with `fill` +
-// `className="object-cover object-center"` as the first child of <section>,
-// underneath the two overlay divs below.
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -21,33 +17,35 @@ export default function Hero() {
       <div className="absolute inset-y-[8%] right-[6%] w-px bg-gradient-to-b from-transparent via-[#E4CD84]/50 to-transparent" />
 
       <div className="relative z-10 flex flex-col items-center">
+        <div className="relative mb-5 h-56 w-52 overflow-hidden [mask-image:linear-gradient(to_bottom,black_82%,transparent)] sm:mb-7 sm:h-72 sm:w-64">
+          <Image
+            src="/hero-couple.png"
+            alt="wedding attire"
+            fill
+            priority
+            sizes="(max-width: 640px) 208px, 256px"
+            className="object-cover object-center"
+          />
+        </div>
         <div className="mb-6 text-4xl tracking-[0.4em] text-[#E4CD84]/85">
           ۞
         </div>
         <p
           className={`${fraunces.className} mb-4 animate-[rise_1s_ease-out_0.2s_forwards] text-base italic tracking-[0.15em] text-[#E4CD84] opacity-0 sm:text-lg`}
         >
-          together with their families
+          Hosted by Tariq Mehmood
         </p>
-        <h1
-          className={`${fraunces.className} max-w-[16ch] animate-[rise_1s_ease-out_0.5s_forwards] text-5xl font-medium leading-tight opacity-0 sm:text-7xl`}
-        >
-          Ayesha
-          <span className="block text-[0.55em] font-light italic text-[#C9A227]">
-            &amp;
+        <p className="mt-2 max-w-[34rem] animate-[rise_1s_ease-out_0.5s_forwards] text-base leading-relaxed tracking-[0.04em] opacity-0 sm:text-xl sm:tracking-[0.08em]">
+          We invite you to celebrate our daughter&apos;s wedding
+          <span className="mt-2 block text-[#E4CD84]">
+            13&ndash;14 November
           </span>
-          Farhan
-        </h1>
-        <p className="mt-7 animate-[rise_1s_ease-out_0.8s_forwards] text-lg tracking-[0.08em] opacity-0 sm:text-xl">
-          request the honour of your presence &nbsp;·&nbsp;{" "}
-          <span className="text-[#E4CD84]">13&ndash;15 November</span>
         </p>
       </div>
 
       <div className="absolute bottom-8 z-10 text-xs tracking-[0.3em] text-[#E4CD84]/70">
         ↓ SCROLL
       </div>
-
     </section>
   );
 }

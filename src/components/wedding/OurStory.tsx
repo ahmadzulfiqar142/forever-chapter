@@ -2,26 +2,41 @@ import { fraunces } from "@/lib/font";
 
 export default function OurStory() {
   return (
-    <section className="flex min-h-svh w-full flex-col items-center justify-center py-24">
-      <div className="grid w-full max-w-5xl grid-cols-1 items-center gap-16 px-6 md:grid-cols-2">
-        <div className="relative order-2 flex h-80 items-center justify-center overflow-hidden rounded-md bg-gradient-to-br from-[#F1E6CF] to-[#E4CD84]/40 shadow-lg md:order-1">
-          <span className="text-5xl text-[#C9A227]/70">۞</span>
-        </div>
-
-        <div className="order-1 text-center md:order-2 md:text-left">
+    <section className="flex min-h-[60svh] w-full flex-col items-center justify-center !p-4">
+      <div className="w-full max-w-3xl">
+        <div className="text-center">
           <p className="mb-2 text-sm tracking-[0.2em] text-[#4B6043]">
             OUR STORY
           </p>
           <h2
-            className={`${fraunces.className} mb-5 text-3xl font-medium text-[#3E0F1F] sm:text-4xl`}
+            className={`${fraunces.className} mb-6 text-3xl font-medium leading-tight text-[#3E0F1F] sm:text-4xl`}
           >
-            How it began
+            A Beautiful Beginning, Brought Together by Family
           </h2>
-          <p className="text-lg leading-relaxed text-[#2A1418]/80">
-            Replace this paragraph with your own story — how you met, a
-            favourite memory, or a line from your families. Two or three short
-            sentences work best here.
-          </p>
+          <div className="mx-auto max-w-2xl space-y-5 text-left text-base leading-relaxed text-[#2A1418]/80 sm:text-lg">
+            <p>
+              Our story began with family. We were relatives, and both our
+              families had always shared a close bond, but we had never really
+              gotten to know each other personally.
+            </p>
+            <p>
+              With the support and blessings of our families, we were brought
+              together for a new chapter in life. That&apos;s when we started
+              getting to know each other, slowly building a connection based on
+              understanding, trust, and companionship.
+            </p>
+            <p>
+              What began as an arranged marriage became the start of a beautiful
+              journey together. Now, we look forward to building a life filled
+              with love, happiness, and countless memories.
+            </p>
+            <p
+              className={`${fraunces.className} pt-2 text-center text-lg italic text-[#3E0F1F] sm:text-xl`}
+            >
+              Sometimes, the most beautiful stories begin with a little help
+              from family.
+            </p>
+          </div>
         </div>
       </div>
     </section>

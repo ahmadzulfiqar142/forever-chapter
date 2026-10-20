@@ -17,12 +17,21 @@ const events: EventCard[] = [
   {
     dayLabel: "FRIDAY · 13 NOVEMBER",
     glyph: "۞",
-    title: "Nikah\n& Mehndi",
+    title: "Nikah",
     date: "13 November",
-    backLabel: "DAY ONE",
-    backTitle: "Nikah & Mehndi",
+    backLabel: "FRIDAY · 13 NOVEMBER",
+    backTitle: "Nikah",
+    backDetail: "Join us for the Nikah ceremony\nat 2:00 PM.",
+  },
+  {
+    dayLabel: "FRIDAY · 13 NOVEMBER",
+    glyph: "✧",
+    title: "Mehndi",
+    date: "13 November",
+    backLabel: "FRIDAY · 13 NOVEMBER",
+    backTitle: "Mehndi",
     backDetail:
-      "The marriage ceremony in the afternoon,\nfollowed by an evening of music, colour\nand dance to celebrate together.",
+      "Celebrate with an evening of music,\ncolour and dance, beginning at 8:00 PM.",
   },
   {
     dayLabel: "SATURDAY · 14 NOVEMBER",
@@ -34,16 +43,6 @@ const events: EventCard[] = [
     backDetail:
       "The groom's procession arrives,\nfollowed by dinner and celebration\nlate into the evening.",
   },
-  {
-    dayLabel: "SUNDAY · 15 NOVEMBER",
-    glyph: "❋",
-    title: "Reception",
-    date: "15 November",
-    backLabel: "DAY THREE",
-    backTitle: "Reception",
-    backDetail:
-      "A formal evening hosted by the\ncouple to close the celebrations,\nwith dinner and photographs.",
-  },
 ];
 
 function EventTiltCard({ event }: { event: EventCard }) {
@@ -51,7 +50,8 @@ function EventTiltCard({ event }: { event: EventCard }) {
   const innerRef = useRef<HTMLDivElement>(null);
   const flippedRef = useRef(false);
 
-  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+  function handlePointerMove(e: React.PointerEvent<HTMLDivElement>) {
+    if (e.pointerType !== "mouse") return;
     const card = cardRef.current;
     if (!card) return;
     const rect = card.getBoundingClientRect();
@@ -59,14 +59,15 @@ function EventTiltCard({ event }: { event: EventCard }) {
     const y = e.clientY - rect.top;
     const midX = rect.width / 2;
     const midY = rect.height / 2;
-    const rotateY = ((x - midX) / midX) * 8;
-    const rotateX = -((y - midY) / midY) * 8;
-    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02,1.02,1.02)`;
+    const rotateY = ((x - midX) / midX) * 4;
+    const rotateX = -((y - midY) / midY) * 4;
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01,1.01,1.01)`;
   }
 
-  function handleMouseLeave() {
+  function handlePointerLeave() {
     const card = cardRef.current;
-    if (card) card.style.transform = "rotateX(0deg) rotateY(0deg) scale3d(1,1,1)";
+    if (card)
+      card.style.transform = "rotateX(0deg) rotateY(0deg) scale3d(1,1,1)";
   }
 
   function handleClick() {
@@ -82,10 +83,10 @@ function EventTiltCard({ event }: { event: EventCard }) {
   return (
     <div
       ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
       onClick={handleClick}
-      className="relative w-full cursor-pointer [aspect-ratio:3/4] [perspective:1400px] [transform-style:preserve-3d] transition-transform duration-300 ease-out will-change-transform sm:[aspect-ratio:2/3] md:[aspect-ratio:3/4]"
+      className="relative min-h-[280px] w-full cursor-pointer [perspective:1400px] [transform-style:preserve-3d] transition-transform duration-300 ease-out will-change-transform sm:min-h-[340px] md:min-h-0 md:[aspect-ratio:3/4]"
     >
       <div
         ref={innerRef}
@@ -132,23 +133,25 @@ function EventTiltCard({ event }: { event: EventCard }) {
 
 export default function Events() {
   return (
-    <section className="relative flex min-h-svh w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-[#5C1A2E] via-[#4A1526] to-[#3E0F1F] py-24">
+    <section className="relative flex min-h-svh w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-[#5C1A2E] via-[#4A1526] to-[#3E0F1F] px-6 pt-16 pb-24 sm:py-20 md:py-24">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#3E0F1F]/40 via-transparent to-[#3E0F1F]/70" />
-      <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(201,162,39,0.22), transparent 60%)" }} />
-      <div className="relative z-10 w-full max-w-5xl px-6">
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 0%, rgba(201,162,39,0.22), transparent 60%)",
+        }}
+      />
+      <div className="relative z-10 w-full max-w-5xl !mt-4">
         <h2
-          className={`${fraunces.className} mb-3 text-center text-3xl font-medium text-[#F8F1E4] sm:text-4xl`}
+          className={`${fraunces.className} mb-2 text-center text-3xl font-medium text-[#F8F1E4] sm:text-4xl`}
         >
-          Three Days, Three Nights
+          Wedding Celebrations
         </h2>
-        <p className="mb-2 text-center text-lg text-[#E4CD84]/80">
-          Tilt each card, then tap to see the details
+        <p className="mb-8 text-center text-base tracking-wide text-[#E4CD84]/80 sm:mb-10 sm:text-lg">
+          13–14 November · Nikah, Mehndi &amp; Baraat
         </p>
-        <p className="mb-12 text-center text-sm tracking-wide text-[#E4CD84]/50">
-          — hover or drag on desktop, tap on mobile —
-        </p>
-
-        <div className="grid grid-cols-1 gap-8 [perspective:1400px] md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 [perspective:1400px] md:grid-cols-3 md:gap-8 !p-4">
           {events.map((event) => (
             <EventTiltCard key={event.title} event={event} />
           ))}
